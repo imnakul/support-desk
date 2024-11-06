@@ -3,6 +3,7 @@ const dotenv = require("dotenv").config();
 const colors = require("colors");
 const connectDB = require("./config/db");
 const { errorHandler } = require("./middleware/errorMiddleware");
+const userSchema = require("./models/userModel");
 const PORT = process.env.PORT || 5000;
 
 //connect to databsae
