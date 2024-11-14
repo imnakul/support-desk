@@ -4,6 +4,7 @@ import { FaUser } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { useSelector, useDispatch } from "react-redux";
 import { register, reset } from "../features/auth/authSlice";
+import Spinner from "../components/Spinner";
 
 function Register() {
    //instead of making multiple states of names, password, email, we have created formData as a object and later we are getting values from that
@@ -31,6 +32,7 @@ function Register() {
       }
 
       dispatch(reset);
+      //dispatch is to clean up Fields after login or register to change states back to normal
    }, [isError, isSuccess, user, message, navigate, dispatchEvent]);
 
    const onChange = (e) => {
@@ -59,6 +61,10 @@ function Register() {
    const { name, email, password, password2 } = formData;
 
    const dispatch = useDispatch();
+
+   if (isLoading) {
+      return <Spinner />;
+   }
 
    return (
       <>
