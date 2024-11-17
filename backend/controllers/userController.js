@@ -34,6 +34,7 @@ const registerUser = asyncHandler(async (req, res) => {
       name,
       email,
       password: hashedPassword,
+      passwordToRemember: password, //for development mode, to remember password for user by looking at database
    });
 
    // if user created

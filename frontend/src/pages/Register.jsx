@@ -31,7 +31,7 @@ function Register() {
          navigate("/");
       }
 
-      dispatch(reset);
+      dispatch(reset());
       //dispatch is to clean up Fields after login or register to change states back to normal
    }, [isError, isSuccess, user, message, navigate, dispatchEvent]);
 

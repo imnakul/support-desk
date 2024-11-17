@@ -16,6 +16,10 @@ const userSchema = mongoose.Schema(
          type: String,
          required: [true, " Please add a password"],
       },
+      //for development mode ONLY, to remember password for user by looking at database, below field.. remove in production
+      passwordToRemember: {
+         type: String,
+      },
       isAdmin: {
          type: Boolean,
          required: true,
