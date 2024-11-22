@@ -80,6 +80,7 @@ export const ticketSlice = createSlice({
          })
          .addCase(getTickets.rejected, (state, action) => {
             state.isLoading = false;
+            state.isSuccess = false;
             state.isError = true;
             state.message = action.payload;
          });
