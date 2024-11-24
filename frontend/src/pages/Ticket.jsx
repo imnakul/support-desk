@@ -7,10 +7,15 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import Modal from "react-modal";
 import { useNavigate } from "react-router-dom";
-import { getNotes, reset as notesReset } from "../features/notes/noteSlice";
+import {
+   getNotes,
+   createNote,
+   reset as notesReset,
+} from "../features/notes/noteSlice";
 import NoteItem from "../components/NoteItem";
 import { FaPlus } from "react-icons/fa";
 
+//custom style for react-modal
 const customStyles = {
    content: {
       width: "600px",
@@ -63,7 +68,7 @@ function Ticket() {
    //Create note submit
    const onNoteSubmit = (e) => {
       e.preventDefault();
-      console.log("Submit");
+      dispatch(createNote({ noteText, ticketId }));
       closeModal();
    };
 
