@@ -70,7 +70,7 @@ export const getTicket = createAsyncThunk(
    }
 );
 
-// Get user ticket
+// Close ticket
 export const closeTicket = createAsyncThunk(
    "tickets/updateTicket",
    async (ticketId, thunkAPI) => {
