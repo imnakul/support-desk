@@ -1,4 +1,4 @@
-//bsically a schema for all users
+//bsically a schema for all tickets
 
 const mongoose = require("mongoose");
 
